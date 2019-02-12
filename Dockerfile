@@ -23,7 +23,7 @@ COPY . /src
 # result/static/all.js
 RUN ./stack-build.sh
 
-# When starting this image, run reloader.sh be default.
-# The reloader.sh script will automatically update the server whenever
-# a change is made to the source code.
+# When starting this image, run reloader.sh be default.  The reloader.sh script
+# will automatically update and restart the server whenever a change is made to
+# the source code.
 ENTRYPOINT ["./reloader.sh"]
