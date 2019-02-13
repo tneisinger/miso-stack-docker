@@ -18,19 +18,18 @@ This is a work-in-progress, so suggestions are welcome.
 
 ## Prerequisites
 
-Make sure that you have a fairly up-to-date version of
-[docker](https://docs.docker.com/install/) installed. This project was built
-using version 18.09.1.
+You will need to have [docker](https://docs.docker.com/install/) installed
+on your system.  This repo was built using docker version 18.09.1.
 
 ## Clone and Build
 
-Clone this repo and run buildImage.sh:
+Clone this repo and run stack-build-docker.sh:
 ```bash
 git clone https://github.com/tneisinger/miso-stack-docker
 cd miso-stack-docker
-./buildImage.sh
+./stack-build-docker.sh
 ```
-**Be aware: building the image will take a long time.**
+**Be aware: Running stack-build-docker.sh will take a long time.**
 
 ## Run It!
 
