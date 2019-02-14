@@ -10,18 +10,16 @@ RUN sudo apt-get -y install fswatch
 # version of hpack.
 RUN stack upgrade
 
-# create the /src dir, declare it as a volume, and set it as the workdir
-RUN mkdir -p /src
-VOLUME /src
-WORKDIR /src
+# create the /project dir and set it as the workdir
+RUN mkdir -p /project
+WORKDIR /project
 
-# Copy everything into the src dir
-COPY . /src
+# Copy everything into the project dir
+COPY . /project
 
-# Build all the parts the project (common, backend, and frontend), copy the
-# backend executable to result/bin/server, and copy the frontend's all.js to
-# result/static/all.js
-RUN ./stack-build.sh
+# build the frontend and backend
+RUN stack build --stack-yaml=frontend/stack.yaml
+RUN stack build --stack-yaml=backend/stack.yaml
 
 # When starting this image, run reloader.sh be default.  The reloader.sh script
 # will automatically update and restart the server whenever a change is made to
