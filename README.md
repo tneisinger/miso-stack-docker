@@ -23,16 +23,13 @@ on your system.  This repo was built using docker version 18.09.1.
 
 ## Clone and Build
 
-Clone this repo and run stack-build-docker.sh:
+Clone this repo and run buildImage.sh:
 ```bash
 git clone https://github.com/tneisinger/miso-stack-docker
 cd miso-stack-docker
-./stack-build-frontend.sh
-sudo chmod o+w common/common.cabal
-sudo chmod o+w -R common/.stack-work/
-./stack-build-backend.sh
+./buildImage.sh
 ```
-**Be aware: Running stack-build-docker.sh will take a long time.**
+**Be aware: Running buildImage.sh will take a long time.**
 
 ## Run It!
 

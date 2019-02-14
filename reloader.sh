@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Copy all.js and the server executable into the result/ dir
+echo "λ Copying over all.js" \
+  && cp $(stack path --stack-yaml=frontend/stack.yaml --local-install-root)/bin/frontend.jsexe/all.js result/static/all.js \
+  && echo "λ Copying over the server executable" \
+  && cp $(stack path --stack-yaml=backend/stack.yaml --local-install-root)/bin/backend result/bin/server
+
 # Tell stack to rebuild the backend whenever a relevant source file is changed
 $(stack --stack-yaml=backend/stack.yaml build --fast --file-watch) &
 
