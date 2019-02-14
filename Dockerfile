@@ -21,6 +21,12 @@ COPY . /project
 RUN stack build --stack-yaml=frontend/stack.yaml
 RUN stack build --stack-yaml=backend/stack.yaml
 
+# Copy the server executable into the result/bin dir
+RUN cp $(stack path --stack-yaml=backend/stack.yaml --local-install-root)/bin/backend result/bin/server \
+
+# Copy all.js into result/static
+RUN cp $(stack path --stack-yaml=frontend/stack.yaml --local-install-root)/bin/frontend.jsexe/all.js result/static/all.js \
+
 # When starting this image, run reloader.sh be default.  The reloader.sh script
 # will automatically update and restart the server whenever a change is made to
 # the source code.
