@@ -27,7 +27,10 @@ Clone this repo and run stack-build-docker.sh:
 ```bash
 git clone https://github.com/tneisinger/miso-stack-docker
 cd miso-stack-docker
-./stack-build-docker.sh
+./stack-build-frontend.sh
+sudo chmod o+w common/common.cabal
+sudo chmod o+w -R common/.stack-work/
+./stack-build-backend.sh
 ```
 **Be aware: Running stack-build-docker.sh will take a long time.**
 
