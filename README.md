@@ -23,24 +23,24 @@ on your system.  This repo was built using docker version 18.09.1.
 
 ## Clone and Build
 
-Clone this repo and run buildImage.sh:
+Clone this repo and run build-docker-image.sh:
 ```bash
 git clone https://github.com/tneisinger/miso-stack-docker
 cd miso-stack-docker
-./buildImage.sh
+./build-docker-image.sh
 ```
-**Be aware: Running buildImage.sh will take a long time.**
+**Note: Running build-docker-image.sh will take a long time.**
 
 ## Run It!
 
 To start the app, simply run: 
 ```bash
-./startContainer.sh
+./start-container.sh
 ```
 This will start a docker container based on the docker image that was built by
-`buildImage.sh`.  This docker container will automatically run `reloader.sh`,
-which is responsible for running the app server, as well as rebuilding and
-restarting the server on code changes.
+`build-docker-image.sh`.  This docker container will automatically run
+`reloader.sh`, which is responsible for running the app server, as well as
+rebuilding and restarting the server on code changes.
 
 Go to `http://localhost:3003` in your browser to see the result.
 

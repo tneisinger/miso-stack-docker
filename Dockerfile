@@ -1,6 +1,6 @@
 FROM tehnix/ghcjs-docker:lts-9.21
 
-# Install fswatch so that runner.sh and exeCopier.sh will work
+# Install fswatch so that runner.sh and exe-copier.sh will work
 RUN sudo add-apt-repository -y ppa:hadret/fswatch
 RUN sudo apt-get -y update
 RUN sudo apt-get -y install fswatch
